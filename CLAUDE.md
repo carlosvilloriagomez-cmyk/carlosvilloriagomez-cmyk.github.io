@@ -36,7 +36,7 @@ Un acabado muy profesional con animaciones: aparición de secciones al hacer scr
 7. **Proyectos con IA**: primer videocurrículum junto al actual, anuncio, memoria del prompt, n8n, material didáctico. Foto relajada y tecnológica `foto-proyectos.jpg`.
 8. **Contacto**: email, teléfono, y LinkedIn/Instagram si se añaden.
 
-Las fotos personales se reparten por la página (cabecera, Yo, estudios, proyectos), no solo una. La de la cabecera es provisional: Carlos puede sustituirla por una nueva con traje y la cara visible. En "Yo" hay un hueco para `assets/img/foto-yo.jpg` (vertical 4:5, distinta a las demás), pendiente de que Carlos la elija.
+Las fotos personales se reparten por la página (cabecera, Yo, estudios, proyectos), no solo una. La de la cabecera es provisional: Carlos puede sustituirla por una nueva con traje y la cara visible. En "Yo" va `assets/img/foto-yo.jpg` (vertical 4:5): selfie de espejo con sudadera gris, elegida por Carlos, recortada para que no se vea el baño.
 
 ## Contenido (fuente de verdad)
 **Datos:** Carlos Villoria Gómez, 19 años, nacido en Salamanca, vive en Málaga. Email carlos.villoria.gomez@gmail.com, teléfono +34 622 76 29 86.
@@ -69,7 +69,7 @@ Las fotos personales se reparten por la página (cabecera, Yo, estudios, proyect
 - `assets/img/ingles-b2.jpg`: certificado de inglés (Capman 360°LPT, nivel B2 CEFR, 293 puntos, 18/02/2026), con DNI y número de referencia tapados. Se dejó el QR de verificación.
 - Concurso (listas): `euro-equipo.jpg`, `euro-diploma.jpg`, `euro-instagram.jpg`, `euro-trabajo-portada.jpg`, `euro-trabajo-inflacion.jpg`, `euro-trabajo-previsiones.jpg`.
 - Pendientes: `talentland.jpg`, `videocv-poster.jpg`.
-- Fotos descartadas de la web (interiores de casa, baño o cara tapada por el móvil): selfies de espejo con camisa negra, sudadera gris y traje gris.
+- Fotos descartadas de la web (interiores de casa, baño o cara tapada por el móvil): selfies de espejo con camisa negra y traje gris. La de la sudadera gris sí se usa en "Yo", recortada, porque Carlos lo pidió.
 - Vídeos (ya en `assets/videos/`, comprimidos para web con faststart):
   - `videocv-v1.mp4`: **PRIMER videocurrículum** (el menos trabajado), 79 s, vertical 9:16, 720×1280, 4,3 MB. Poster `assets/img/videocv-v1-poster.jpg`. Va en la sección Proyectos para mostrar la evolución.
   - `anuncio.mp4`: anuncio "Ocean Shield", 14 s, vertical 9:16, 720×1280, 3,3 MB. Poster `assets/img/anuncio-poster.jpg`. Va en Proyectos.
@@ -91,8 +91,6 @@ Las fotos personales se reparten por la página (cabecera, Yo, estudios, proyect
 3. ¿Se dejan tapados los nombres de la portada?
 4. Confirmar la cifra del v1 "unos 2.000 centros" (no ponerla en la web hasta entonces). La certificación de Python de la UMA (dic. 2025, 25 h) ya está confirmada por el diploma.
 5. Enlaces de LinkedIn e Instagram (de momento vacíos en el bloque `CFG` al final de `index.html`).
-6. Foto para la sección "Yo" (`assets/img/foto-yo.jpg`).
-
 ## Cómo trabajar
 - Previsualizar en local con `python3 -m http.server` y comprobar en móvil (ancho 390 px) y escritorio.
 - Antes de cada `git push`, revisar que `index.html` sigue en la raíz y que no se ha cambiado nada que afecte a la URL.
