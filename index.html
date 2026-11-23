@@ -10,89 +10,96 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F8FAFC; --line:#E2E8F0; --ink:#0F172A; --blue:#0284C7; --red:#E11D48;
-  --muted:#475569; --card:#FFFFFF;
+  --bg:#0F172A; --panel:#131D35; --line:#1F2A44; --ink:#F1F5F9; --text:#CBD5E1; --muted:#94A3B8;
+  --blue:#0284C7; --sky:#7DD3FC; --red:#E11D48; --rose:#FB7185;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-decoration:none}
+body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;padding-left:14px;
+  background-image:linear-gradient(rgba(148,163,184,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.07) 1px,transparent 1px);background-size:44px 44px}
+body::before{content:"";position:fixed;left:0;top:0;bottom:0;width:14px;background:var(--red);z-index:20}
+a{color:var(--sky);text-decoration:none}
 a:hover{text-decoration:underline}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
-.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;line-height:1.1;color:var(--ink);letter-spacing:-.01em}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+.badge{display:inline-block;background:var(--red);color:#fff;border-radius:3px;padding:5px 11px}
 
-/* nav */
-nav{position:sticky;top:0;z-index:10;background:rgba(248,250,252,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:10;background:rgba(15,23,42,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;gap:18px;align-items:center;justify-content:space-between;height:54px}
-nav .brand{font-family:Fraunces,serif;font-weight:800;color:var(--ink)}
+nav .brand{white-space:nowrap;font-family:"Space Grotesk",sans-serif;font-weight:700;color:var(--ink)}
 nav .brand i{color:var(--red);font-style:normal}
-nav ul{display:flex;gap:16px;list-style:none;overflow-x:auto}
-nav ul a{color:var(--ink);font-size:.88rem;font-weight:500;white-space:nowrap}
+nav ul{display:flex;gap:18px;list-style:none;overflow-x:auto}
+nav ul a{color:var(--text);font-size:.88rem;font-weight:500;white-space:nowrap}
+nav ul a:hover{color:var(--ink);text-decoration:none}
 
-/* hero */
-.hero{padding:56px 0 36px;border-bottom:1px solid var(--line)}
-.kicker{color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.kicker::before{content:"";width:28px;height:3px;background:var(--red)}
-.hero h1{font-size:clamp(2.2rem,7vw,4.2rem);font-weight:800;max-width:15ch}
-.hero h1 span{color:var(--blue)}
-.hero p.lead{margin-top:18px;max-width:58ch;color:var(--muted);font-size:1.1rem}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;font-size:.82rem;font-weight:500}
-.chip.b{border-color:var(--blue);color:var(--blue)}
-.chip.r{border-color:var(--red);color:var(--red)}
+.hero{position:relative;padding:56px 0 150px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:start}
+.hero h1{font-size:clamp(2.4rem,7.5vw,4.4rem);margin:18px 0 20px}
+.hero h1 em{display:block;color:var(--red);font-style:normal}
+.hero p.lead{max-width:50ch;font-size:1.12rem;color:var(--ink)}
+.photo{position:relative;justify-self:end;width:min(100%,300px);margin:0 18px 18px 0}
+.photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--red);border-radius:6px;z-index:0}
+.photo img{position:relative;z-index:1;display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;background:#E2E8F0}
+.hero svg.chart{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px;z-index:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:5px 12px;font-size:.82rem;font-weight:500}
+.chip.b{border-color:var(--blue);color:var(--sky)}
+.chip.r{border-color:var(--red);color:var(--rose)}
+a.chip:hover{text-decoration:none;background:#17233F}
 
-/* sections */
-section{padding:56px 0;border-bottom:1px solid var(--line)}
-.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
-.sec-head .num{color:var(--blue)}
-.sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800}
+section{padding:60px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.sec-head .num{color:#fff;background:var(--red);border-radius:3px;padding:4px 9px}
+.sec-head h2{font-size:clamp(1.7rem,4.2vw,2.4rem)}
 .grid{display:grid;gap:18px}
 .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px;border-top:3px solid var(--ink)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:20px;border-top:3px solid var(--sky)}
 .card.b{border-top-color:var(--blue)} .card.r{border-top-color:var(--red)}
-.card h3{font-size:1.15rem;margin-bottom:8px}
-.card p,.card li{color:var(--muted);font-size:.96rem}
-.card ul{padding-left:18px;margin-top:6px}
-.tag{display:inline-block;margin-bottom:10px;color:var(--blue)}
-.card.r .tag{color:var(--red)}
-.prose p{max-width:68ch;color:#1e293b;margin-bottom:14px;font-size:1.04rem}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.card p,.card li{color:var(--text);font-size:.96rem}
+.tag{display:inline-block;margin-bottom:10px;color:var(--sky)}
+.card.r .tag{color:var(--rose)}
+.prose p{max-width:66ch;color:var(--text);margin-bottom:14px;font-size:1.04rem}
 .prose strong{color:var(--ink)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:22px}
-.stat{border-left:3px solid var(--blue);padding:4px 0 4px 12px}
-.stat b{display:block;font-family:Fraunces,serif;font-size:1.7rem}
-.stat span{font-size:.82rem;color:var(--muted)}
-.stat.r{border-color:var(--red)}
 
-/* media */
-.media{position:relative;aspect-ratio:16/9;background:#E2E8F0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.media{position:relative;aspect-ratio:16/9;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .media video,.media iframe,.media img{width:100%;height:100%;border:0;object-fit:cover;display:block;background:#000}
 .media.img{aspect-ratio:4/3}
+.media.v{aspect-ratio:9/16;width:100%;max-width:340px;max-height:80vh;margin:0 auto}
+.media.v video{object-fit:contain}
+.feature .media.v{max-width:340px;margin:0}
 .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);text-align:center;padding:12px;
-  background:repeating-linear-gradient(45deg,#F1F5F9,#F1F5F9 10px,#E8EEF5 10px,#E8EEF5 20px)}
+  background:repeating-linear-gradient(45deg,#111B33,#111B33 10px,#14203B 10px,#14203B 20px)}
 .ph b{color:var(--ink)}
-figure figcaption{margin-top:8px;font-size:.85rem;color:var(--muted)}
+figure figcaption{margin-top:9px;font-size:.86rem;color:var(--muted)}
+figcaption b{color:var(--ink)}
 .feature{margin-bottom:22px}
-.feature .media{max-width:860px}
+.feature .media{box-shadow:14px 14px 0 var(--red)}
+.feature figure{margin-right:14px}
 
-/* timeline */
 .tl{border-left:2px solid var(--line);margin-left:6px}
-.tl-item{position:relative;padding:0 0 26px 22px}
-.tl-item::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--blue)}
+.tl-item{position:relative;padding:0 0 28px 24px}
+.tl-item::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--blue)}
 .tl-item.r::before{border-color:var(--red)}
-.tl-item h3{font-size:1.15rem}
-.tl-item .when{color:var(--muted);margin:2px 0 6px}
-.tl-item p{color:var(--muted);max-width:70ch}
+.tl-item h3{font-size:1.2rem}
+.tl-item .when{color:var(--sky);margin:4px 0 8px}
+.tl-item.r .when{color:var(--rose)}
+.tl-item p{color:var(--text);max-width:70ch}
 
-/* contact */
-.contact a.btn{display:inline-block;margin:6px 8px 0 0;padding:10px 18px;border-radius:4px;background:var(--ink);color:#fff;font-weight:600;font-size:.92rem}
-.contact a.btn:hover{background:var(--blue);text-decoration:none}
+.contact a.btn{display:inline-block;margin:6px 8px 0 0;padding:11px 18px;border-radius:4px;background:var(--red);color:#fff;font-weight:600;font-size:.92rem}
+.contact a.btn:hover{background:#BE123C;text-decoration:none}
 footer{padding:28px 0;color:var(--muted);font-size:.85rem}
-@media(max-width:560px){nav ul{gap:12px}.hero{padding-top:36px}}
+@media(max-width:720px){
+  .hero .wrap{grid-template-columns:1fr}
+  .photo{justify-self:start;order:-1;width:200px}
+  .hero{padding-bottom:120px}
+  body{padding-left:10px}body::before{width:10px}
+}
 </style>
 </head>
 <body>
@@ -112,16 +119,24 @@ footer{padding:28px 0;color:var(--muted);font-size:.85rem}
 
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="kicker mono">Málaga · 19 años</div>
-    <h1><span data-cfg="name">Carlos Villoria Gómez</span>: economía, geopolítica e <span>IA</span>.</h1>
-    <p class="lead">Nací en Salamanca y vivo en Málaga, adonde me vine solo sin conocer a nadie. Estudio Marketing e Investigación de Mercados y busco mi primera gran oportunidad.</p>
-    <div class="chips">
-      <span class="chip b">Marketing e Inv. de Mercados · UMA</span>
-      <span class="chip r">Generación €uro · equipo ganador</span>
-      <span class="chip">IA aplicada</span>
-      <span class="chip">Talent Land 2026</span>
+    <div>
+      <span class="mono badge">Vídeo currículum</span>
+      <h1><span data-cfg="nameFirst">Carlos Villoria</span><em data-cfg="nameLast">Gómez</em></h1>
+      <p class="lead">Joven de 19 años interesado en datos, tecnología y geopolítica. Curioso, analítico y con ganas de aprender. Busco un equipo con quien crecer.</p>
+      <div class="chips">
+        <span class="chip b">Marketing e Inv. de Mercados · UMA</span>
+        <span class="chip r">Generación €uro · equipo ganador</span>
+        <span class="chip">IA aplicada</span>
+        <span class="chip">Talent Land 2026</span>
+      </div>
     </div>
+    <figure class="photo"><img src="assets/img/foto-perfil.jpg" alt="Carlos Villoria Gómez"></figure>
   </div>
+  <svg class="chart" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="0,150 0,128 200,120 420,100 640,86 860,60 1040,34 1200,18 1200,150" fill="#E11D48" fill-opacity=".18"/>
+    <polyline points="0,96 220,92 440,82 700,76 960,66 1200,58" fill="none" stroke="#0284C7" stroke-width="3" vector-effect="non-scaling-stroke"/>
+    <polyline points="0,128 200,120 420,100 640,86 860,60 1040,34 1200,18" fill="none" stroke="#E11D48" stroke-width="4" vector-effect="non-scaling-stroke"/>
+  </svg>
 </header>
 
 <!-- ============ VIDEOCURRÍCULUM ============ -->
@@ -131,7 +146,7 @@ footer{padding:28px 0;color:var(--muted);font-size:.85rem}
     <div class="feature">
       <!-- Para cambiar el vídeo: sube assets/videos/videocv.mp4 (o pon el ID de YouTube en data-yt) -->
       <figure>
-        <div class="media" data-file="assets/videos/videocv.mp4" data-yt="" data-poster="assets/img/videocv-poster.jpg" data-label="Videocurrículum"></div>
+        <div class="media v" data-file="assets/videos/videocv.mp4" data-yt="" data-label="Videocurrículum"></div>
         <figcaption>Hecho con IA y animado con Claude.</figcaption>
       </figure>
     </div>
@@ -142,15 +157,12 @@ footer{padding:28px 0;color:var(--muted);font-size:.85rem}
 <section id="yo">
   <div class="wrap">
     <div class="sec-head"><span class="num mono">01</span><h2>Yo</h2></div>
-    <div class="grid g2" style="align-items:start">
+    <div class="grid">
       <div class="prose">
         <p>Tengo <strong>19 años</strong>, nací en <strong>Salamanca</strong> y vivo en <strong>Málaga</strong>. Soy atrevido, auténtico y exigente, y lo demuestro con hechos: me vine a vivir aquí solo, sin conocer a nadie, para conocer mundo, ser más independiente y buscar oportunidades lejos de mi ciudad natal.</p>
         <p>Me mueven la <strong>economía</strong> y la <strong>geopolítica</strong>, y también la <strong>filosofía</strong>, la <strong>psicología</strong> y la <strong>inteligencia artificial</strong>. Me gusta entender cómo se toman las decisiones, las de los países, las de los mercados y las de las personas.</p>
         <p>Sigo canales como <em>Memorias de Pez</em> y <em>Solo Fonseca</em>, leo a Henry Hazlitt (<em>La economía en una lección</em>) y organizo lo que aprendo en cuadernos de NotebookLM, como uno sobre el sistema J-Alert de Japón.</p>
       </div>
-      <figure>
-        <div class="media img" data-img="assets/img/foto-perfil.jpg" data-label="Foto de perfil"></div>
-      </figure>
     </div>
     <div class="chips" style="margin-top:6px">
       <span class="chip b">Economía</span><span class="chip r">Geopolítica</span><span class="chip">Filosofía</span><span class="chip b">IA</span><span class="chip">Psicología</span>
@@ -166,12 +178,12 @@ footer{padding:28px 0;color:var(--muted);font-size:.85rem}
 
     <div class="grid g2" style="margin-top:10px">
       <figure>
-        <div class="media" data-file="assets/videos/videocv-v1.mp4" data-yt="" data-label="Primer videocurrículum"></div>
+        <div class="media v" data-file="assets/videos/videocv-v1.mp4" data-yt="" data-poster="assets/img/videocv-v1-poster.jpg" data-label="Primer videocurrículum"></div>
         <figcaption><b>El primer videocurrículum</b>, menos trabajado. Lo dejo aquí para que se vea el cambio con la versión actual.</figcaption>
       </figure>
       <figure>
-        <div class="media" data-file="assets/videos/anuncio.mp4" data-yt="" data-label="Anuncio creado con IA"></div>
-        <figcaption><b>Anuncio creado con IA.</b></figcaption>
+        <div class="media v" data-file="assets/videos/anuncio.mp4" data-yt="" data-poster="assets/img/anuncio-poster.jpg" data-label="Anuncio creado con IA"></div>
+        <figcaption><b>Ocean Shield:</b> anuncio vertical de 14 segundos creado con IA, con el mismo personaje en los cuatro planos.</figcaption>
       </figure>
     </div>
 
@@ -188,7 +200,7 @@ footer{padding:28px 0;color:var(--muted);font-size:.85rem}
         <p>Primeras bases en n8n: una automatización sencilla que responde correos automáticamente al detectar palabras clave.</p>
       </div>
       <div class="card">
-        <span class="tag mono" style="color:var(--blue)">Vídeo animado</span>
+        <span class="tag mono" >Vídeo animado</span>
         <h3>Material didáctico</h3>
         <p>Fichas y exámenes para mi padre, profesor de primaria. Siempre sienta bien echar una mano a quien te ha dado tanto, pero necesito un reto mucho mayor.</p>
       </div>
@@ -257,6 +269,8 @@ footer{padding:28px 0;color:var(--muted);font-size:.85rem}
 /* ====== EDITA SOLO ESTE BLOQUE ====== */
 const CFG = {
   name: "Carlos Villoria Gómez",          // nombre completo
+  nameFirst: "Carlos Villoria",
+  nameLast: "Gómez",
   nameShort: "Carlos Villoria",     // aparece en la barra superior
   email: "carlos.villoria.gomez@gmail.com",                  // ej. "nombre@gmail.com"
   linkedin: "",               // URL completa
