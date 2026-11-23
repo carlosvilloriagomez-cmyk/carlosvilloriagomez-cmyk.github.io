@@ -22,7 +22,9 @@ Oscuro, estética de periodismo de datos / think tank joven.
 - La web actual (`index.html`) ya implementa esto. Sirve de base; se puede rehacer entera si mejora el resultado.
 
 ## Lo que se quiere ahora
-Un acabado muy profesional con animaciones: aparición de secciones al hacer scroll, barridos de color en títulos, líneas de gráfico que se dibujan, contadores, línea de tiempo con progreso, parallax suave. Se permite GSAP y Lenis desde CDN. Nada que dañe el rendimiento en móvil. El videocurrículum debe seguir siendo lo primero que ve el visitante.
+Un acabado muy profesional con animaciones: aparición de secciones al hacer scroll, barridos de color en títulos, líneas de gráfico que se dibujan, contadores, línea de tiempo con progreso, parallax suave. Se permite GSAP desde CDN. Nada que dañe el rendimiento en móvil. El videocurrículum debe seguir siendo lo primero que ve el visitante.
+- **Sin scroll suavizado (Lenis):** se probó y en PC con touchpad se notaba retardado. Scroll nativo en todos los dispositivos.
+- **Todo el contenido debe verse aunque falle JavaScript o el CDN.** Las animaciones solo mejoran, nunca ocultan.
 
 ## Estructura de la web (orden decidido con Carlos)
 1. Cabecera: nombre, entradilla, chips, foto de perfil (`foto-perfil.jpg`), gráfico decorativo.
@@ -34,22 +36,32 @@ Un acabado muy profesional con animaciones: aparición de secciones al hacer scr
 7. **Proyectos con IA**: primer videocurrículum junto al actual, anuncio, memoria del prompt, n8n, material didáctico. Foto relajada y tecnológica `foto-proyectos.jpg`.
 8. **Contacto**: email, teléfono, y LinkedIn/Instagram si se añaden.
 
-Las tres fotos personales se reparten por la página (cabecera, estudios, proyectos), no solo una. La de la cabecera es provisional: Carlos puede sustituirla por una nueva con traje y la cara visible.
+Las fotos personales se reparten por la página (cabecera, Yo, estudios, proyectos), no solo una. La de la cabecera es provisional: Carlos puede sustituirla por una nueva con traje y la cara visible. En "Yo" hay un hueco para `assets/img/foto-yo.jpg` (vertical 4:5, distinta a las demás), pendiente de que Carlos la elija.
 
 ## Contenido (fuente de verdad)
 **Datos:** Carlos Villoria Gómez, 19 años, nacido en Salamanca, vive en Málaga. Email carlos.villoria.gomez@gmail.com, teléfono +34 622 76 29 86.
 
-**Biografía:** joven atrevido, auténtico y exigente; lo demuestra habiéndose ido a vivir solo a Málaga sin conocer a nadie, para conocer mundo, ser más independiente y buscar oportunidades lejos de su ciudad natal. Intereses: economía, geopolítica, filosofía, IA, psicología. Sigue canales como Memorias de Pez y Solo Fonseca; lee "La economía en una lección" de Henry Hazlitt; tiene cuadernos de NotebookLM (p. ej. sobre el sistema J-Alert de Japón). Ningún proyecto grande de economía/geopolítica aparte del concurso.
+**Biografía:** joven atrevido, auténtico y exigente; lo demuestra habiéndose ido a vivir solo a Málaga sin conocer a nadie, para conocer mundo, ser más independiente y buscar oportunidades lejos de su ciudad natal. Intereses: economía, geopolítica, filosofía, IA, psicología. Sigue canales como Memorias de Pez y Solo Fonseca; tiene cuadernos de NotebookLM (p. ej. sobre el sistema J-Alert de Japón). Ningún proyecto grande de economía/geopolítica aparte del concurso.
 
-**IA:** usa Gemini, NotebookLM, ChatGPT y Claude. Experiencia mínima en vídeo hiperrealista: proyecto pospuesto por necesitar herramientas caras (Higgsfield, claves de API). Tiene certificado en Gemini y en Python. Ha creado vídeos animados con Claude (como el propio videocurrículum) y material didáctico para su padre, maestro de primaria; dice que siempre sienta bien echar una mano a quien te ha dado tanto, pero que necesita un reto mucho mayor que diseñar fichas y exámenes. Bases de automatización con n8n: una automatización sencilla que responde correos automáticamente al detectar palabras clave. En Proyectos se muestra el primer videocurrículum (menos trabajado) junto al actual para destacar la evolución, además del anuncio con IA y la memoria del prompt.
+**Lecturas:** *El hombre en busca de sentido* (Viktor Frankl), *El manantial* (Ayn Rand) y *La economía en una lección* (Henry Hazlitt) son sus favoritos. También ha leído *Así habló Zaratustra* (Nietzsche), *Diarios del opio* (David Jiménez) y *Memorias de Adriano* (Marguerite Yourcenar).
 
-**Concurso Generación €uro, 13.ª edición (2023-2024):** parte del equipo ganador, IES Fray Luis de León (Salamanca). Analizaron geopolítica e inflación (decisión de política monetaria del Consejo de Gobierno del BCE, 6 de marzo de 2024). Carlos fue el orador ante el jurado. Diploma de ganador, Banco de España, Madrid, 5 de abril de 2024. Destacar el prestigio y la dificultad del concurso.
+**Qué busca:** no solo marketing y contenido con IA. También le encantaría trabajar como analista de datos geopolíticos, redactor de guiones para vídeos de geopolítica o investigador de fuentes. No describirlo como si solo buscara prácticas de marketing.
+
+**IA:** usa Gemini, NotebookLM, ChatGPT y Claude. Experiencia mínima en vídeo hiperrealista: proyecto pospuesto por necesitar herramientas caras (Higgsfield, claves de API). Tiene certificados de la UMA en Ingeniería de Prompts con Gemini y NotebookLM, y en Análisis de Datos con Python. Ha creado vídeos animados con Claude (como el propio videocurrículum) y material didáctico para su padre, maestro de primaria; dice que siempre sienta bien echar una mano a quien te ha dado tanto, pero que necesita un reto mucho mayor que diseñar fichas y exámenes. Bases de automatización con n8n: una automatización sencilla que responde correos automáticamente al detectar palabras clave. En Proyectos se muestra el primer videocurrículum (menos trabajado) junto al actual para destacar la evolución, además del anuncio con IA y la memoria del prompt.
+
+**Memoria del prompt = proyecto "Arquitecto de Asistentes"** (`assets/docs/memoria-prompt.pdf`). **No tiene nada que ver con el anuncio Ocean Shield.** Es un Proyecto de Claude que diseñó para crear nuevos asistentes (agentes). Arquitectura modular de tres piezas: `Project_Instructions.md` (motor en cuatro fases, con invariantes blindados), `Knowledge_Base_Prompting.md` (metodologías de Anthropic, OpenAI, Google, Self-Refine, LLM-as-a-Judge) y `Prompt_Evaluador.md` (auditor externo "critique-first, score-second", que se guarda fuera del proyecto para evitar sesgos). Auditorías en conversaciones limpias: el primer borrador sacó un 73 % y la versión final un 92,5 %.
+
+**Concurso Generación €uro, 13.ª edición (2023-2024):** parte del equipo ganador, IES Fray Luis de León (Salamanca). Analizaron geopolítica e inflación (decisión de política monetaria del Consejo de Gobierno del BCE, 6 de marzo de 2024). Carlos presentó y defendió el análisis frente al jurado, pero el trabajo fue de todo el equipo: no decir que fue "el orador" ni que lo hizo él solo. Diploma de ganador, Banco de España, Madrid, 5 de abril de 2024. Destacar el prestigio y la dificultad del concurso. En las cifras, destacar "1.º" y poner en texto discreto "en la 13.ª edición del Concurso Generación €uro".
 
 **Talent Land Málaga 2026:** asistente de los speakers.
 
 **Estudios:** Grado en Marketing e Investigación de Mercados, Universidad de Málaga, 2.º curso, ninguna asignatura suspensa. Notas destacadas en Análisis Económico, Comportamiento del Consumidor, Gestión del Producto y Branding, Historia del Comercio y Matemáticas para la Economía y la Empresa.
 
-**Diplomas:** Ingeniería de Prompts, Análisis de Datos con Python, Gemini, acreditación de inglés: B2 CEFR en el 360°LPT de Capman Testing Solutions, puntuación global 293 (Listening 81, Reading 74, Speaking 71, Writing 67), 18/02/2026.
+**Diplomas** (Ingeniería de Prompts y Gemini son **el mismo** diploma):
+- *Ingeniería de Prompts y gestión del conocimiento con IA generativa: Gemini y NotebookLM para el ámbito académico*, Universidad de Málaga (FGUMA), 25 h online, 1 ECTS, del 15/01/2026 al 16/06/2026, expedido el 29/06/2026. Imagen: `assets/img/diploma-prompts.jpg`.
+- *Análisis de Datos con Python*, Universidad de Málaga (FGUMA), 25 h (10 presenciales y 15 online), 1 ECTS, del 17 al 22/11/2025, expedido el 17/12/2025. Programa: Python, Jupyter, POO, minería de datos, aprendizaje automático, NumPy, SciPy, Pandas, Matplotlib, Scikit-learn. Imagen: `assets/img/diploma-python.jpg`.
+- Las imágenes de los diplomas de la UMA tienen el **DNI tapado** y están recortadas sin el bloque de verificación (código CSV, URL y QR), porque esa verificación muestra el original con el DNI. Los PDF originales no se suben al repo.
+- Acreditación de inglés (imagen `assets/img/ingles-b2.jpg`): B2 CEFR en el 360°LPT de Capman Testing Solutions, puntuación global 293 (Listening 81, Reading 74, Speaking 71, Writing 67), 18/02/2026.
 
 ## Archivos y huecos de contenido
 `index.html` carga todo desde `assets/`. Si un archivo no existe se muestra "Próximamente".
@@ -65,7 +77,7 @@ Las tres fotos personales se reparten por la página (cabecera, estudios, proyec
   - **Los vídeos son verticales (9:16).** Mostrarlos con `object-fit: contain`, ancho máximo ~340-380 px y altura máxima ~80 vh; nunca recortados a 16:9. En escritorio, texto al lado; en móvil, a ancho completo.
 - El primer videocurrículum (v1) usa una paleta distinta (negro con naranja). El nuevo se hará con la paleta de marca roja y azul. El v1 se hizo con Remotion (vídeo programado en React) desde Claude, con subtítulos animados, formato 1080×1920: el nuevo puede hacerse igual.
 - Contenido del v1 (no contradecirlo en la web): se presenta como candidato a prácticas en marketing digital y contenido con IA; menciona el Grado en Marketing e Investigación de Mercados (UMA), el anuncio Ocean Shield (4 planos, mismo personaje, creado con ChatGPT y animado con IA), que el propio vídeo se hizo con Claude, el concurso Generación €uro (1.º de unos 2.000 centros, equipo ganador de 4 estudiantes, 13.ª edición, inflación y geopolítica) y análisis de datos con Python (Pandas, NumPy, Matplotlib; certificación de la UMA de dic. 2025, 25 horas). Pendiente de que Carlos confirme las cifras de "unos 2.000 centros" y la certificación de Python.
-- PDFs: `assets/docs/memoria-prompt.pdf`, `diploma-prompts.pdf`, `diploma-python.pdf`, `diploma-gemini.pdf`, `diploma-ingles.pdf`. Aún no existen.
+- PDFs: `assets/docs/memoria-prompt.pdf` (memoria del Arquitecto de Asistentes, ya subida). Los diplomas se muestran como imágenes (ver "Diplomas").
 - Si falta algún archivo, el diseño no debe verse roto.
 
 ## Privacidad (decisiones tomadas)
@@ -77,8 +89,9 @@ Las tres fotos personales se reparten por la página (cabecera, estudios, proyec
 1. ¿Se quita la captura de Instagram (repite el diploma)?
 2. ¿Se muestran las tres páginas del trabajo o solo portada y una de gráficas?
 3. ¿Se dejan tapados los nombres de la portada?
-4. Confirmar cifras del v1: "unos 2.000 centros" y certificación de Python de la UMA (dic. 2025, 25 h).
+4. Confirmar la cifra del v1 "unos 2.000 centros" (no ponerla en la web hasta entonces). La certificación de Python de la UMA (dic. 2025, 25 h) ya está confirmada por el diploma.
 5. Enlaces de LinkedIn e Instagram (de momento vacíos en el bloque `CFG` al final de `index.html`).
+6. Foto para la sección "Yo" (`assets/img/foto-yo.jpg`).
 
 ## Cómo trabajar
 - Previsualizar en local con `python3 -m http.server` y comprobar en móvil (ancho 390 px) y escritorio.
