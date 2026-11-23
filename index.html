@@ -224,6 +224,7 @@ figcaption b{color:var(--ink);font-weight:600}
 .pieces li{counter-increment:p;position:relative;padding-left:40px;font-size:.95rem}
 .pieces li::before{content:counter(p);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:3px;background:var(--red);color:#fff;font:600 .8rem/26px "IBM Plex Mono",monospace;text-align:center}
 .pieces b{display:block;color:var(--ink);font-weight:600}
+.arch .note{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
 @media(max-width:900px){.arch{grid-template-columns:1fr;padding:22px}}
 
 /* contact */
@@ -581,7 +582,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="arch-head">
         <span class="tag mono">Ingeniería de prompts · Claude</span>
         <h3>Arquitecto de Asistentes</h3>
-        <p>Un proyecto en Claude diseñado para <strong>crear nuevos asistentes</strong>. En lugar de un único prompt enorme, lo construí como un sistema de tres piezas y lo sometí a auditorías en conversaciones limpias para evitar sesgos.</p>
+        <p>Un asistente en Claude cuya única función es ayudarme a <strong>diseñar y refinar otros asistentes personalizados</strong> de forma metódica. En lugar de un único prompt gigante, lo construí como un sistema de tres piezas y lo sometí a auditorías en conversaciones limpias para evitar sesgos.</p>
         <a class="btn" href="assets/docs/memoria-prompt.pdf" target="_blank" rel="noopener">Leer la memoria del proyecto (PDF)</a>
       </div>
       <div class="arch-body">
@@ -591,10 +592,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <div class="r"><span class="n"><span class="count" data-to="92.5" data-dec="1">92,5</span> %</span><span class="mono">versión final</span></div>
         </div>
         <ol class="pieces">
-          <li><b>Instrucciones del proyecto</b>El motor: cuatro fases (diagnóstico, investigación del sector, redacción del prompt y versiones) y reglas blindadas que ninguna edición puede debilitar.</li>
-          <li><b>Base de conocimiento</b>Metodologías de prompting de Anthropic, OpenAI y Google condensadas, para no buscarlas en internet en cada uso.</li>
-          <li><b>Evaluador externo</b>Un prompt aparte que critica primero y puntúa después, y propone hasta cinco parches. Se usa fuera del proyecto para que el contexto no contamine la nota.</li>
+          <li><b>Instrucciones base</b>Cuatro fases (diagnóstico, búsqueda del sector con validación mía, redacción del prompt y versiones) y unas reglas prioritarias que no cambian sin mi aprobación.</li>
+          <li><b>Guía de referencia</b>Las pautas de la documentación oficial de Anthropic, OpenAI y Google reunidas en un archivo, para no buscar teoría de prompting en cada uso.</li>
+          <li><b>Auditor externo</b>Un prompt aparte que analiza primero y puntúa después, y propone hasta cinco ajustes. Lo uso fuera del Proyecto para que el contexto no contamine la evaluación.</li>
         </ol>
+        <p class="note">Una nota puesta por otro modelo no garantiza el éxito en casos reales, pero confirmó que los fallos principales del diseño estaban resueltos.</p>
       </div>
     </article>
 
