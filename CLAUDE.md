@@ -90,7 +90,7 @@ Las fotos personales se reparten por la página (cabecera, Yo, estudios, proyect
 2. ¿Se muestran las tres páginas del trabajo o solo portada y una de gráficas?
 3. ¿Se dejan tapados los nombres de la portada?
 4. Confirmar la cifra del v1 "unos 2.000 centros" (no ponerla en la web hasta entonces). La certificación de Python de la UMA (dic. 2025, 25 h) ya está confirmada por el diploma.
-5. Enlaces de LinkedIn e Instagram (de momento vacíos en el bloque `CFG` al final de `index.html`).
+5. Enlace de Instagram (vacío en el bloque `CFG`). El LinkedIn ya está puesto: bloque grande "VER MI LINKEDIN" al final de Contacto, más llamativo que el email y el teléfono, como pidió Carlos.
 ## Cómo trabajar
 - Previsualizar en local con `python3 -m http.server` y comprobar en móvil (ancho 390 px) y escritorio.
 - Antes de cada `git push`, revisar que `index.html` sigue en la raíz y que no se ha cambiado nada que afecte a la URL.
