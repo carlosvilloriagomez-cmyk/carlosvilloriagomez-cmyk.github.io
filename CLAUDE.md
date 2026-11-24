@@ -28,7 +28,7 @@ Un acabado muy profesional con animaciones: aparición de secciones al hacer scr
 
 ## Estructura de la web (orden decidido con Carlos)
 1. Cabecera: nombre, entradilla, chips, foto de perfil (`foto-perfil.jpg`), gráfico decorativo.
-2. **Videocurrículum** (vídeo grande, lo primero tras la cabecera; hasta que exista el nuevo muestra "Próximamente").
+2. **Videocurrículum** (vídeo grande, lo primero tras la cabecera): el definitivo, `assets/videos/videocv.mp4`.
 3. **Yo**: biografía e intereses.
 4. **Estudios**: Universidad de Málaga, certificado de inglés B2 (`ingles-b2.jpg`), diplomas. Foto informal `foto-estudios.jpg` (la del mar, encaja con "venirme a conocer mundo").
 5. **Concurso Generación €uro**: foto del equipo, diploma, tres páginas del trabajo.
@@ -68,12 +68,12 @@ Las fotos personales se reparten por la página (cabecera, Yo, estudios, proyect
 - Fotos personales (listas): `foto-perfil.jpg` (cabecera), `foto-estudios.jpg`, `foto-proyectos.jpg`.
 - `assets/img/ingles-b2.jpg`: certificado de inglés (Capman 360°LPT, nivel B2 CEFR, 293 puntos, 18/02/2026), con DNI y número de referencia tapados. Se dejó el QR de verificación.
 - Concurso (listas): `euro-equipo.jpg`, `euro-diploma.jpg`, `euro-instagram.jpg`, `euro-trabajo-portada.jpg`, `euro-trabajo-inflacion.jpg`, `euro-trabajo-previsiones.jpg`.
-- Pendientes: `talentland.jpg`, `videocv-poster.jpg`.
+- Pendientes: `talentland.jpg`.
 - Fotos descartadas de la web (interiores de casa, baño o cara tapada por el móvil): selfies de espejo con camisa negra y traje gris. La de la sudadera gris sí se usa en "Yo", recortada, porque Carlos lo pidió.
 - Vídeos (ya en `assets/videos/`, comprimidos para web con faststart):
   - `videocv-v1.mp4`: **PRIMER videocurrículum** (el menos trabajado), 79 s, vertical 9:16, 720×1280, 4,3 MB. Poster `assets/img/videocv-v1-poster.jpg`. Va en la sección Proyectos para mostrar la evolución.
   - `anuncio.mp4`: anuncio "Ocean Shield", 14 s, vertical 9:16, 720×1280, 3,3 MB. Poster `assets/img/anuncio-poster.jpg`. Va en Proyectos.
-  - `videocv.mp4`: **el videocurrículum nuevo y definitivo. Todavía NO existe.** Carlos lo hará después de terminar la web (orden acordado: primero web, luego vídeo). Mientras tanto el hueco principal muestra "Próximamente". Cuando exista: guardarlo como `assets/videos/videocv.mp4` (y su poster `assets/img/videocv-poster.jpg`, añadiendo `data-poster` al bloque) y no hará falta tocar nada más.
+  - `videocv.mp4`: **el videocurrículum nuevo y definitivo**, 153 s (2 min 33 s), vertical 9:16, 720×1280, 5,3 MB, -14 LUFS. Poster `assets/img/videocv-poster.jpg`. Hecho con Remotion, voz de ElevenLabs y Claude Code en un proyecto aparte (`C:\videocv-kit`, no se sube a este repo). Se muestra con una etiqueta `<video>` directa en la sección 1.
   - **Los vídeos son verticales (9:16).** Mostrarlos con `object-fit: contain`, ancho máximo ~340-380 px y altura máxima ~80 vh; nunca recortados a 16:9. En escritorio, texto al lado; en móvil, a ancho completo.
 - El primer videocurrículum (v1) usa una paleta distinta (negro con naranja). El nuevo se hará con la paleta de marca roja y azul. El v1 se hizo con Remotion (vídeo programado en React) desde Claude, con subtítulos animados, formato 1080×1920: el nuevo puede hacerse igual.
 - Contenido del v1 (no contradecirlo en la web): se presenta como candidato a prácticas en marketing digital y contenido con IA; menciona el Grado en Marketing e Investigación de Mercados (UMA), el anuncio Ocean Shield (4 planos, mismo personaje, creado con ChatGPT y animado con IA), que el propio vídeo se hizo con Claude, el concurso Generación €uro (1.º de unos 2.000 centros, equipo ganador de 4 estudiantes, 13.ª edición, inflación y geopolítica) y análisis de datos con Python (Pandas, NumPy, Matplotlib; certificación de la UMA de dic. 2025, 25 horas). Pendiente de que Carlos confirme las cifras de "unos 2.000 centros" y la certificación de Python.

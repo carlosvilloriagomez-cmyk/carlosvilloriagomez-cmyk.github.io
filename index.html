@@ -340,15 +340,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="sec-head"><span class="num mono">01</span><h2>Videocurrículum</h2></div>
     <div class="feature">
       <div class="stage">
-        <!-- Cuando exista: sube assets/videos/videocv.mp4 (y opcionalmente assets/img/videocv-poster.jpg con data-poster). O pon el ID de YouTube en data-yt. -->
-        <div class="media v slot" data-file="assets/videos/videocv.mp4" data-yt="" data-poster="" data-label="Videocurrículum">
-          <div class="ph"><span class="pulse" aria-hidden="true"></span><b>Videocurrículum</b><span class="mono">Próximamente</span></div>
+        <!-- Videocurrículum definitivo: 720×1280, 2 min 33 s, comprimido para web con faststart. Etiqueta <video> directa para que se vea aunque falle JavaScript. -->
+        <div class="media v">
+          <video controls playsinline preload="metadata" poster="assets/img/videocv-poster.jpg" src="assets/videos/videocv.mp4" aria-label="Videocurrículum de Carlos Villoria Gómez"></video>
         </div>
       </div>
       <div class="txt">
         <h3>Conóceme en vídeo</h3>
-        <p>Estoy preparando la versión definitiva de mi videocurrículum, animada con Claude y con los mismos colores que esta web.</p>
-        <p>Mientras tanto, en <a href="#proyectos">Proyectos</a> puedes ver el primero que hice y comparar la evolución.</p>
+        <p>Dos minutos y medio sobre quién soy, qué estudio, el concurso Generación €uro, mis proyectos con IA y lo que busco. Lleva subtítulos, así que se entiende también sin sonido.</p>
+        <p>Lo he hecho con <strong>Remotion</strong> (vídeo programado en código), la voz de <strong>ElevenLabs</strong> y <strong>Claude Code</strong>, con los mismos colores que esta web. En <a href="#proyectos">Proyectos</a> puedes ver el primero que hice y comparar la evolución.</p>
         <ul class="list">
           <li><span class="mono">Estudio</span>Marketing e Investigación de Mercados · UMA</li>
           <li><span class="mono">Concurso</span>Generación €uro · equipo ganador</li>
